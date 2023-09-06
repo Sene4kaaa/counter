@@ -1,5 +1,6 @@
 import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
 import {Button} from "@mui/material";
+import s from "./settings.module.css";
 
 type Props = {
     startValue: number
@@ -33,7 +34,7 @@ export const Settings = (props: Props) => {
     }
 
     return (
-        <>
+        <div className={s.container}>
             <div>
                 <label>max value:</label>
                 <input type={"number"}
@@ -52,6 +53,6 @@ export const Settings = (props: Props) => {
                     variant={"contained"}
                 >set</Button>
             </div>
-        </>
+        </div>
     )
 }
