@@ -35,8 +35,8 @@ export const Counter = (props: Props) => {
 
     return (
         <div className={s.container}>
-            <div className={`${s.value} ${valueClass}`}>{props.value >= 0 ? <h1>{props.value}</h1> :
-                <h1 className={s.incorrectValue}>Incorrect value!</h1>}</div>
+            <div className={`${s.value} ${valueClass}`}>{props.value < 0 || props.startValue === props.maxValue ?
+                <h1 className={s.incorrectValue}>Incorrect value!</h1> : <h1>{props.value}</h1>}</div>
             <div>
                 <Button
                     onClick={incrementHandler}
@@ -56,7 +56,7 @@ export const Counter = (props: Props) => {
                     variant={"contained"}
                 >settings</Button>
                 <Button
-                    disabled={props.value === 0}
+                    disabled={props.value === 0 || props.startValue === props.maxValue}
                     onClick={resToZeroHandler}
                     color={"error"}
                     variant={"contained"}
