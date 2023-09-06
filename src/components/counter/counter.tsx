@@ -17,9 +17,14 @@ export const Counter = () => {
         setValue(0)
     }
 
+    let valueClass
+    if (value === maxValue) {
+        valueClass = s.maxValue
+    }
+
     return (
         <div className={s.container}>
-            <div>{value}</div>
+            <div className={`${s.value} ${valueClass}`}>{value}</div>
             <div>
                 <Button
                     onClick={incrementHandler}
