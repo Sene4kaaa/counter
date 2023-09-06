@@ -5,17 +5,30 @@ import {Settings} from "./components/settings/settings";
 
 const App = () => {
 
+    const [value, setValue] = useState<number>(0)
+    const [startValue, setStartValue] = useState<number>(0)
+    const [maxValue, setMaxValue] = useState<number>(5)
     const [disSetButton, setDisSetButton] = useState<boolean>(false)
+    const [viewSet, setViewSet] = useState<boolean>(false);
 
-    if (disSetButton) {
+    if (viewSet) {
         return (
-            <div><Settings setDisSetButton={setDisSetButton}/></div>
+            <div><Settings
+                startValue={startValue}
+                setStartValue={setStartValue}
+                maxValue={maxValue}
+                setMaxValue={setMaxValue}
+                setViewSet={setViewSet}/></div>
         )
     }
 
     return (
         <div>
-            <Counter setDisSetButton={setDisSetButton}/>
+            <Counter
+                value={value}
+                maxValue={maxValue}
+                setValue={setValue}
+                setViewSet={setViewSet}/>
         </div>
     )
 }

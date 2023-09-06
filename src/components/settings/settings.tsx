@@ -1,29 +1,44 @@
-import React, {Dispatch, SetStateAction, useState} from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {Button} from "@mui/material";
 
 type Props = {
-    setDisSetButton: Dispatch<SetStateAction<boolean>>
+    startValue: number
+    setStartValue:  Dispatch<SetStateAction<number>>
+    maxValue: number
+    setMaxValue: Dispatch<SetStateAction<number>>
+    setViewSet: Dispatch<SetStateAction<boolean>>
 }
 
 export const Settings = (props: Props) => {
 
-    const [minValue, setMinValue] = useState<number>(0)
-    const [maxValue, setMaxValue] = useState<number>(100)
-
-    const setHandler = ()=> {
-        props.setDisSetButton(false)
+    const setHandler = () => {
+        props.setViewSet(false)
     }
 
+    const onChangeMaxValue = () => {
+        props.setStartValue(props.startValue + 1)
+    }
+
+
     return (
-        <div>
-          <input value={minValue}/>
-          <input value={maxValue}/>
-            <Button
-                onClick={setHandler}
-                color={"success"}
-                variant={"contained"}
-            >settings</Button>
-        </div>
+        <>
+            <div>
+                <label>max value:</label>
+                <input type={"number"}
+                       onChange={onChangeMaxValue}
+                       value={props.maxValue}/></div>
+            <div>
+                <label> start value: </label>
+                <input type={"number"} value={props.maxValue}/>
+            </div>
+            <div>
+                <Button
+                    onClick={setHandler}
+                    color={"success"}
+                    variant={"contained"}
+                >set</Button>
+            </div>
+        </>
     )
 
 
