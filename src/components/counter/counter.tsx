@@ -24,6 +24,10 @@ export const Counter = (props: Props) => {
         props.setViewSet(true)
     }
 
+    const resToZeroHandler = () => {
+        props.setValue(0)
+    }
+
     let valueClass
     if (props.value === props.maxValue) {
         valueClass = s.maxValue
@@ -49,6 +53,11 @@ export const Counter = (props: Props) => {
                     color={"success"}
                     variant={"contained"}
                 >settings</Button>
+                <Button
+                    onClick={resToZeroHandler}
+                    color={"error"}
+                    variant={"contained"}
+                >res to 0</Button>
             </div>
         </div>
     )
