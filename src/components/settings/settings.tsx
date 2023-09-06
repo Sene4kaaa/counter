@@ -36,12 +36,12 @@ export const Settings = (props: Props) => {
     return (
         <div className={s.container}>
             <div>
-                <label>max value:</label>
+                <label className={s.maxValue}>max value : </label>
                 <input type={"number"}
                        onChange={onChangeMaxValue}
                        value={props.maxValue}/></div>
             <div>
-                <label> start value: </label>
+                <label className={s.startValue}>start value : </label>
                 <input type={"number"}
                        onChange={onChangeStartValue}
                        value={props.startValue}/>

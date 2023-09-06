@@ -8,3 +8,13 @@
     border-radius: 15px;
     background-color: coral;
 }
+
+.maxValue {
+    font-size: large;
+    font-weight: bold;
+}
+
+.startValue {
+    font-size: large;
+    font-weight: bold;
+}
