@@ -24,7 +24,7 @@ export const Counter = () => {
 
     return (
         <div className={s.container}>
-            <div className={`${s.value} ${valueClass}`}>{value}</div>
+            <div className={`${s.value} ${valueClass}`}><h1>{value}</h1></div>
             <div>
                 <Button
                     onClick={incrementHandler}
