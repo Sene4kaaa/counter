@@ -1,13 +1,18 @@
-import React, {useState} from 'react'
+import React, {Dispatch, SetStateAction, useState} from 'react'
 import {Button} from '@mui/material'
 import s from './counter.module.css'
 
 const startValue = 0
 const maxValue = 5
 
-export const Counter = () => {
+type Props = {
+    setDisSetButton: Dispatch<SetStateAction<boolean>>
+}
+
+export const Counter = (props: Props) => {
 
     const [value, setValue] = useState<number>(startValue)
+
 
     const incrementHandler = () => {
         setValue(value + 1)
@@ -15,6 +20,10 @@ export const Counter = () => {
 
     const resetHandler = () => {
         setValue(0)
+    }
+
+    const settingHandler = () => {
+        props.setDisSetButton(true)
     }
 
     let valueClass
@@ -37,6 +46,11 @@ export const Counter = () => {
                     color={"primary"}
                     variant={"contained"}
                 >res</Button>
+                <Button
+                    onClick={settingHandler}
+                    color={"success"}
+                    variant={"contained"}
+                >settings</Button>
             </div>
         </div>
     )
