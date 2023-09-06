@@ -13,6 +13,10 @@
     color: black;
 }
 
+.incorrectValue {
+    color: red;
+}
+
 .maxValue {
     color: red;
 }

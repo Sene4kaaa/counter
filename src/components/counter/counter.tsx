@@ -35,7 +35,8 @@ export const Counter = (props: Props) => {
 
     return (
         <div className={s.container}>
-            <div className={`${s.value} ${valueClass}`}><h1>{props.value}</h1></div>
+            <div className={`${s.value} ${valueClass}`}>{props.value >= 0 ? <h1>{props.value}</h1> :
+                <h1 className={s.incorrectValue}>Incorrect value!</h1>}</div>
             <div>
                 <Button
                     onClick={incrementHandler}
