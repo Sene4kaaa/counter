@@ -2,9 +2,12 @@ import React, {useState} from 'react'
 import {Button} from '@mui/material'
 import s from './counter.module.css'
 
+const startValue = 0
+const maxValue = 5
+
 export const Counter = () => {
 
-    const [value, setValue] = useState<number>(0)
+    const [value, setValue] = useState<number>(startValue)
 
     const incrementHandler = () => {
         setValue(value + 1)
@@ -21,7 +24,9 @@ export const Counter = () => {
                 <Button
                     onClick={incrementHandler}
                     color={"secondary"}
-                    variant={"contained"}>inc</Button>
+                    variant={"contained"}
+                    disabled={value === maxValue}
+                >inc</Button>
                 <Button
                     onClick={resetHandler}
                     color={"primary"}
