@@ -18,7 +18,10 @@ const App = () => {
                 setStartValue={setStartValue}
                 maxValue={maxValue}
                 setMaxValue={setMaxValue}
-                setViewSet={setViewSet}/></div>
+                setViewSet={setViewSet}
+                disSetButton={disSetButton}
+                setDisSetButton={setDisSetButton}
+            /></div>
         )
     }
 

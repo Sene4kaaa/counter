@@ -1,12 +1,14 @@
-import React, {Dispatch, SetStateAction} from 'react';
+import React, {ChangeEvent, Dispatch, SetStateAction} from 'react';
 import {Button} from "@mui/material";
 
 type Props = {
     startValue: number
-    setStartValue:  Dispatch<SetStateAction<number>>
+    setStartValue: Dispatch<SetStateAction<number>>
     maxValue: number
     setMaxValue: Dispatch<SetStateAction<number>>
     setViewSet: Dispatch<SetStateAction<boolean>>
+    disSetButton: boolean
+    setDisSetButton: Dispatch<SetStateAction<boolean>>
 }
 
 export const Settings = (props: Props) => {
@@ -15,8 +17,10 @@ export const Settings = (props: Props) => {
         props.setViewSet(false)
     }
 
-    const onChangeMaxValue = () => {
-        props.setStartValue(props.startValue + 1)
+    const onChangeMaxValue = (e: ChangeEvent<HTMLInputElement>) => {
+        props.setDisSetButton(false);
+        const newVal = +e.currentTarget.value;
+        props.setMaxValue(newVal > props.startValue ? newVal : props.startValue);
     }
 
 
