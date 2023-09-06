@@ -32,7 +32,6 @@ export const Settings = (props: Props) => {
         props.setStartValue(newVal < props.maxValue ? newVal : props.maxValue);
     }
 
-
     return (
         <>
             <div>
@@ -55,6 +54,4 @@ export const Settings = (props: Props) => {
             </div>
         </>
     )
-
-
 }
