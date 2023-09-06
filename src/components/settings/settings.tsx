@@ -48,6 +48,7 @@ export const Settings = (props: Props) => {
             </div>
             <div>
                 <Button
+                    className={s.button}
                     onClick={setHandler}
                     color={"success"}
                     variant={"contained"}
