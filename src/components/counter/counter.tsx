@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import {Button} from "@mui/material"
+import {Button} from '@mui/material'
+import s from './counter.module.css'
 
 export const Counter = () => {
 
@@ -14,16 +15,19 @@ export const Counter = () => {
     }
 
     return (
-        <div>{value}
-            <Button
-                onClick={incrementHandler}
-                color={"secondary"}
-                variant={"contained"}>inc</Button>
-            <Button
-                onClick={resetHandler}
-                color={"primary"}
-                variant={"contained"}
-            >res</Button>
+        <div className={s.container}>
+            <div>{value}</div>
+            <div>
+                <Button
+                    onClick={incrementHandler}
+                    color={"secondary"}
+                    variant={"contained"}>inc</Button>
+                <Button
+                    onClick={resetHandler}
+                    color={"primary"}
+                    variant={"contained"}
+                >res</Button>
+            </div>
         </div>
     )
 }
