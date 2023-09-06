@@ -14,9 +14,19 @@
     font-weight: bold;
 }
 
+.inputMaxValue {
+    color: black;
+    background-color: wheat;
+}
+
 .startValue {
     font-size: large;
     font-weight: bold;
+}
+
+.inputStartValue {
+    color: black;
+    background-color: wheat;
 }
 
 .button {
