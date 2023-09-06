@@ -14,6 +14,7 @@ const App = () => {
     if (viewSet) {
         return (
             <div><Settings
+                setValue={setValue}
                 startValue={startValue}
                 setStartValue={setStartValue}
                 maxValue={maxValue}
