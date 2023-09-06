@@ -5,6 +5,7 @@ import s from './counter.module.css'
 type Props = {
     value: number
     maxValue: number
+    startValue: number
     setValue: Dispatch<SetStateAction<number>>
     setViewSet: Dispatch<SetStateAction<boolean>>
 }
@@ -16,7 +17,7 @@ export const Counter = (props: Props) => {
     }
 
     const resetHandler = () => {
-        props.setValue(0)
+        props.setValue(props.startValue)
     }
 
     const settingHandler = () => {

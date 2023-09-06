@@ -30,6 +30,7 @@ const App = () => {
         <div>
             <Counter
                 value={value}
+                startValue={startValue}
                 maxValue={maxValue}
                 setValue={setValue}
                 setViewSet={setViewSet}/>
