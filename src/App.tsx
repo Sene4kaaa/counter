@@ -9,7 +9,7 @@ const App = () => {
 
     if (disSetButton) {
         return (
-            <div><Settings/></div>
+            <div><Settings setDisSetButton={setDisSetButton}/></div>
         )
     }
 
