@@ -44,6 +44,7 @@ export const Counter = (props: Props) => {
                     disabled={props.value === props.maxValue}
                 >inc</Button>
                 <Button
+                    disabled={props.value === props.startValue}
                     onClick={resetHandler}
                     color={"primary"}
                     variant={"contained"}
@@ -54,6 +55,7 @@ export const Counter = (props: Props) => {
                     variant={"contained"}
                 >settings</Button>
                 <Button
+                    disabled={props.value === 0}
                     onClick={resToZeroHandler}
                     color={"error"}
                     variant={"contained"}
